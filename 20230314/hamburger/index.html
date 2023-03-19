@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>햄버거 메뉴</title>
+    <style>
+      .a11y-hidden {
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+      }
+      .btn {
+        width: 48px;
+        height: 48px;
+        border: 0;
+        background: none;
+        position: relative;
+        /* background-color: skyblue; */
+        padding: 0;
+      }
+      .line {
+        display: block;
+        transition: all 0.3s;
+      }
+      .line span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: black;
+        position: absolute;
+        transition: all 0.2s;
+      }
+      .line span:first-child {
+        top: 15%;
+        /* background-color: aquamarine; */
+      }
+      .line span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .line span:nth-child(3) {
+        bottom: 15%;
+      }
+      .btn:hover .line {
+        transform: rotate(45deg);
+      }
+      .btn:active .line {
+        transform: rotate(180deg);
+      }
+      .btn:hover .line span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .btn:hover .line span:nth-child(2) {
+        opacity: 0;
+      }
+      .btn:hover .line span:nth-child(3) {
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn" type="button">
+      <span class="a11y-hidden">전체 메뉴 열기</span>
+      <span class="line">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </body>
+</html>

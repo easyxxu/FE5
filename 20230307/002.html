@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float example</title>
+    <style>
+      .container {
+        background: rgb(138, 180, 176);
+        overflow: hidden;
+      }
+      /* .container::after {
+        content: "";
+        display: block;
+        clear: left;
+      } */
+      [class^="box"] {
+        width: 100px;
+        height: 100px;
+        background: rgb(141, 75, 246);
+        color: #fff;
+        line-height: 100px;
+        text-align: center;
+      }
+      .box1 {
+        background: rosybrown;
+        float: left;
+      }
+      .box2 {
+        background: saddlebrown;
+        float: left;
+      }
+      .box3 {
+        background: skyblue;
+        clear: left;
+        float: left;
+      }
+      .box4 {
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      container
+      <div class="box1">box 1</div>
+      <div class="box2">box 2</div>
+      <div class="box3">box 3</div>
+      <div class="box4">box 4</div>
+    </div>
+  </body>
+</html>

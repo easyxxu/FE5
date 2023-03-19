@@ -1,0 +1,154 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+  /*
+	font-weight: 500;
+	font-weight: 700;
+	*/
+}
+body {
+  background: #673399;
+}
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+li {
+  text-align: initial;
+}
+/* font */
+.portfolio {
+  font-size: 40px;
+  font-weight: 500;
+  color: #fff;
+}
+.portfolio-about {
+  font-size: 14px;
+  color: #bd8fe8;
+}
+.text-article-title {
+  font-size: 18px;
+  color: #673399;
+}
+.text-article ul {
+  color: #656566;
+}
+
+/* layout */
+.l_wrapper {
+  width: 1080px;
+  margin: 100px auto;
+}
+/* header */
+.title {
+  /* box-shadow: inset 0 0 10px blue; */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin-bottom: 100px;
+}
+.title .portfolio {
+  /* box-shadow: inset 0 0 10px red; */
+  width: 26%;
+  box-sizing: border-box;
+}
+.title .portfolio-about-container {
+  width: 74%;
+  margin: auto 0;
+  /* box-shadow: inset 0 0 10px white; */
+}
+.title .portfolio-about {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+}
+.title .portfolio-about::before {
+  content: "";
+  background: #bd8fe8;
+  width: 70px;
+  height: 1px;
+  margin-right: 16px;
+  /* display: inline-block;
+  width: 100px;
+  transform: rotate(180deg); */
+}
+[class$="-img"] {
+  width: 26%;
+  font-size: 30px;
+  color: #fff;
+}
+/* main */
+.contents {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+[class^="article-"] {
+  display: flex;
+  background: #fff;
+}
+.contents .text-article {
+  flex-grow: 1;
+  padding: 24px;
+}
+.contents .text-article-title {
+  margin-bottom: 32px;
+}
+
+/* style */
+.title .underline {
+  box-shadow: inset 0 -20px 0 orangered;
+}
+.contents .rest-img {
+  background: url(./images/photo01.png) no-repeat 100% center / cover;
+  text-align: center;
+  position: relative;
+}
+.contents .scrap-img {
+  background: url(./images/photo02.png) no-repeat 100% center / cover;
+  text-align: center;
+  margin-left: auto;
+  position: relative;
+}
+.contents .craft-img {
+  background: url(./images/photo03.png) no-repeat 100% center / cover;
+  text-align: center;
+  position: relative;
+}
+[class$="-img"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #673399;
+  opacity: 0.5;
+}
+[class$="-img"] p {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.contents .text-list {
+  padding-left: 24px;
+  /* display: table;
+  margin-left: auto;
+  margin-right: auto; */
+}
+.contents:nth-child(even) {
+  justify-items: flex-end;
+}
+.contents li {
+  font-size: 14px;
+}
+.contents li::marker {
+  color: #bd8fe8;
+  font-size: 14px;
+}

@@ -1,0 +1,200 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  background: rgb(232, 214, 214);
+  font-family: "Pretendard-Regular";
+  font-style: normal;
+}
+h1 {
+  margin-left: 16px;
+  text-align: center;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+.container {
+  width: min(1224px, calc(100% - 60px));
+  margin: auto;
+}
+/* 자식에게 float처리를 하면 부모가 높이 값을 가질 수 없어서 컨테이너의 높이가 사라짐 */
+.container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container article {
+  float: left;
+  width: calc((100% - (24px * 3)) / 4);
+  margin: 0 0 32px 24px;
+}
+
+.card-item a {
+  text-decoration: none;
+  color: #29363d;
+  background: #ffffff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: block;
+  overflow: hidden;
+}
+
+.card-item img {
+  vertical-align: top;
+  width: 100%;
+  aspect-ratio: 288/196;
+  object-fit: cover;
+}
+.card-text {
+  padding: 24px 16px 16px;
+}
+.card-text .title {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-text .title + p {
+  font-size: 12px;
+  line-height: 20px;
+  color: #5a6a72;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin: 12px 0 16px;
+  height: 40px;
+}
+.underline {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 6px;
+}
+/* 두번째 카드 */
+/*
+.card-item2 {
+  width: 288px;
+  height: 374px;
+  background: #ffffff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.card-user {
+  display: flex;
+}
+.card-user-img img {
+  width: 39.64px;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin: 16px 16px 12px 16px;
+}
+.card-user-info .card-user-name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #29363d;
+  margin-top: 19px;
+}
+.card-user-info .card-user-intro {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #5a6a72;
+  margin-top: 1px;
+}
+
+ .card-text2 .thum {
+  width: 288px;
+  height: 196px;
+  vertical-align: top;
+}
+.card-text2 p {
+  margin: 10px 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #5a6a72;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.card-bottom {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-bottom .read {
+  display: flex;
+}
+.read a {
+  text-decoration: none;
+  color: #29363d;
+}
+.read .vetor {
+  padding-left: 20px;
+}
+.card-bottom .card-bottom-icon {
+  display: flex;
+  justify-content: space-between;
+  width: 112px;
+  height: 32px;
+  margin-right: 16px;
+}
+.card-bottom-icon img {
+  width: 32px;
+  height: 32px;
+} */
+
+/* 반응형 만드는 방법 */
+@media (1025px <= width) {
+  /* 1025px 이상은 이 블록 안에 코드 적용 */
+}
+@media (min-width: 1025px) {
+  .container article:nth-child(4n-3) {
+    margin-left: 0;
+  }
+}
+
+@media (641px <= width <= 1024px) {
+  /* 641px이상 1024px이하는 이 블록 안에 코드 적용 */
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container article {
+    width: calc((100% - (24px * 2)) / 3);
+  }
+  .container article:nth-child(3n-2) {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 640px) {
+  .container article {
+    width: calc((100% - 24px) / 2);
+  }
+  .container article:nth-child(2n-1) {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  /* 641px이하는  이 블록 안에 코드 적용 */
+  .container article {
+    width: 100%;
+    margin-left: 0;
+  }
+}

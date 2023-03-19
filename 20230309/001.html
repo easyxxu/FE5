@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calc 함수</title>
+    <style>
+      li {
+        float: left;
+        width: calc((100% - (24px * 2)) / 3);
+      }
+      li:not(:first-child) {
+        margin-left: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </body>
+</html>

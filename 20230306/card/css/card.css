@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  background: url(../img/bg.png);
+  font-family: "Pretendard-Regular";
+  font-style: normal;
+}
+h1 {
+  margin-left: 16px;
+}
+h2 {
+  margin: 0;
+}
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+}
+article {
+  margin: 32px 24px;
+}
+
+.card-item a {
+  text-decoration: none;
+  color: #29363d;
+  display: block;
+  width: 288px;
+  background: #ffffff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.card-item img {
+  vertical-align: top;
+  width: 100%;
+  aspect-ratio: 288/196;
+  object-fit: cover;
+}
+.card-text {
+  padding: 24px 16px 16px;
+}
+.card-text .title {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+}
+.card-text .title + p {
+  font-size: 12px;
+  line-height: 20px;
+  color: #5a6a72;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin: 12px 0 16px;
+}
+.underline {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 6px;
+}
+/* 두번째 카드 */
+.card-item2 {
+  width: 288px;
+  height: 374px;
+  background: #ffffff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.card-user {
+  display: flex;
+}
+.card-user-img img {
+  width: 39.64px;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin: 16px 16px 12px 16px;
+}
+.card-user-info .card-user-name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #29363d;
+  margin-top: 19px;
+}
+.card-user-info .card-user-intro {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #5a6a72;
+  margin-top: 1px;
+}
+
+/* .card-text2 {
+} */
+.card-text2 .thum {
+  width: 288px;
+  height: 196px;
+  vertical-align: top;
+}
+.card-text2 p {
+  margin: 10px 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #5a6a72;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.card-bottom {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-bottom .read {
+  display: flex;
+}
+.read a {
+  text-decoration: none;
+  color: #29363d;
+}
+.read .vetor {
+  padding-left: 20px;
+}
+.card-bottom .card-bottom-icon {
+  display: flex;
+  justify-content: space-between;
+  width: 112px;
+  height: 32px;
+  margin-right: 16px;
+}
+.card-bottom-icon img {
+  width: 32px;
+  height: 32px;
+}

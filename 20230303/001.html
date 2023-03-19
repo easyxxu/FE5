@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      @font-face {
+        font-family: "Pretendard-Bold";
+        src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+          format("woff");
+        font-weight: 400;
+        font-style: normal;
+      }
+      body {
+        font-family: Pretendard-Regular, "Times New Roman", Dotum, "돋움",
+          sans-serif;
+      }
+      p {
+        width: 400px;
+        border: 2px solid #ccc;
+      }
+
+      .ellipsis {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .multi-ellipsis {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+      }
+    </style>
+    <title>Day 4</title>
+  </head>
+  <body>
+    <h1>폰트 적용하기</h1>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus
+      sapiente quidem! Velit et officia, temporibus ad natus quo. Quae at
+      similique deserunt modi minima ipsum debitis blanditiis ipsa facere!
+    </p>
+
+    <p class="ellipsis">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus
+      sapiente quidem! Velit et officia, temporibus ad natus quo. Quae at
+      similique deserunt modi minima ipsum debitis blanditiis ipsa facere!
+    </p>
+
+    <p class="multi-ellipsis">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus
+      sapiente quidem! Velit et officia, temporibus ad natus quo. Quae at
+      similique deserunt modi minima ipsum debitis blanditiis ipsa facere!
+    </p>
+  </body>
+</html>

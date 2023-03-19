@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid layout</title>
+    <style>
+      .container {
+        width: 500px;
+        height: 500px;
+        display: grid;
+        /* grid-template-areas:
+          "box1 box1 box2"
+          "box3 box4 box2"
+          "box5 box6 box6"; */
+        gap: 10px;
+        grid-template-rows: 1.5fr 1fr 1.5fr;
+        grid-template-columns: 1.5fr 1fr 1.5fr;
+      }
+      .box1 {
+        background-color: #4169e1;
+        /* grid-area: box1; */
+        grid-row: 1;
+        grid-column: 1/3;
+      }
+      .box2 {
+        background-color: #fed703;
+        /* grid-area: box2; */
+        grid-row: 1/3;
+        grid-column: 3/4;
+      }
+      .box3 {
+        background-color: #695acd;
+        grid-area: box3;
+      }
+      .box4 {
+        background-color: #f4a361;
+        grid-area: box4;
+      }
+      .box5 {
+        background-color: #fa8172;
+        grid-area: box5;
+      }
+      .box6 {
+        background-color: #2e8b58;
+        grid-area: box6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1"></div>
+      <div class="box2"></div>
+      <div class="box3"></div>
+      <div class="box4"></div>
+      <div class="box5"></div>
+      <div class="box6"></div>
+    </div>
+  </body>
+</html>

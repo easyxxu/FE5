@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>button</title>
+    <style>
+      button {
+        width: 88px;
+        height: 32px;
+        color: #cbd5df;
+        background-color: #343f50;
+        border: 1px solid #1a202c;
+        box-shadow: inset 1px 1px #4a5568;
+        margin-bottom: 10px;
+      }
+      .btn:hover {
+        text-decoration: underline;
+        color: #eee;
+      }
+      .btn:active {
+        box-shadow: inset 1px 1px #262f3e;
+      }
+      .btn:focus {
+        outline: none;
+      }
+      .btn:disabled {
+        box-shadow: none;
+        color: #4a5568;
+        text-decoration: none;
+        background: #3a4556;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn" type="button">Button</button>
+    <button class="btn-positive" type="button">Yes</button>
+    <button class="btn-negative" type="button">Del</button>
+    <button class="btn" type="button" disabled>Button</button>
+  </body>
+</html>

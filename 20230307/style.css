@@ -1,0 +1,39 @@
+div {
+  background-color: #456ea5;
+  color: #fff;
+  overflow: hidden;
+  padding: 20px;
+  width: min-content;
+  height: max-content;
+  text-align: center;
+}
+header {
+  background-color: skyblue;
+  width: 820px;
+  height: 100px;
+  margin-bottom: 20px;
+  line-height: 100px;
+}
+section {
+  background-color: #485372;
+  width: 600px;
+  height: 300px;
+  float: left;
+  line-height: 300px;
+}
+aside {
+  background-color: #c7f543;
+  width: 200px;
+  height: 300px;
+  float: left;
+  margin-left: 20px;
+  line-height: 300px;
+}
+footer {
+  background-color: #ff7769;
+  width: 820px;
+  height: 100px;
+  float: left;
+  margin-top: 20px;
+  line-height: 100px;
+}
