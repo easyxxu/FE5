@@ -164,7 +164,6 @@ header .logo {
   overflow-y: scroll;
 }
 .vending-machine-total .get-drink-ul {
-  min-height: 1300px;
   list-style-type: none;
 }
 .vending-machine-total .get-drink-ul li {
