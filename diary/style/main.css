@@ -68,7 +68,7 @@ h3 {
 }
 .article-title::before {
   content: "";
-  display: black;
+  display: block;
   width: 100%;
   position: absolute;
   border-top: 1px solid #677880;
@@ -94,7 +94,6 @@ h3 {
   width: 1224px;
   max-width: calc(100% - 60px);
   margin: auto;
-  justify-content: space-between;
   gap: 40px;
 }
 
@@ -124,4 +123,39 @@ h3 {
 }
 .container section ul li {
   margin-bottom: 76px;
+}
+
+.button-group {
+  position: absolute;
+  width: 111px;
+  bottom: -13%;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 1px solid #677880;
+  border-radius: 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-group button {
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  background: none;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+.button-group button img {
+  width: 100%;
+}
+.button-group span {
+  display: inline-block;
+  margin: 0 4px;
+  width: 1px;
+  height: 16px;
+  background: #d8ddde;
 }
