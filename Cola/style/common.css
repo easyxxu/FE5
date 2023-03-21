@@ -60,6 +60,10 @@ button {
   padding: 2px 10px;
   margin: auto;
 }
+.drink.active {
+  box-shadow: 0 0 0 3px #6327fe;
+  filter: none;
+}
 .drink:hover {
   box-shadow: 0 0 0 3px #6327fe;
   filter: none;
