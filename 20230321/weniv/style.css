@@ -20,6 +20,10 @@ ul,
 li {
   list-style: none;
 }
+a {
+  text-decoration: none;
+  color: #29363d;
+}
 button {
   border: 0;
   cursor: pointer;
@@ -56,7 +60,7 @@ section {
   padding: 22px 16px 16px;
   box-sizing: border-box;
 }
-.notice-list li {
+.notice-list li a {
   display: flex;
   padding: 16px 0 19px 0;
   border-top: 1px solid #eeeeee;
