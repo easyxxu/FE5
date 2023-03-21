@@ -117,7 +117,6 @@ section {
   color: #fff;
   padding: 2px 0;
   border-radius: 20px;
-  display: inline-block;
 }
 .soldout {
   background: rgba(0, 0, 0, 0.8);
@@ -141,6 +140,7 @@ section {
   grid-template-columns: auto calc((100% - 24px) / 3);
   grid-template-rows: 32px 32px 106px;
   gap: 12px;
+  margin-top: 20px;
 }
 .bg-box {
   background: #eae8fe;
@@ -163,18 +163,72 @@ section {
 .section2 {
   padding: 9px 27px;
 }
-.btn {
+.btn,
+.btn-get {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   font-size: 13px;
 }
-.input-money {
+.btn-get {
+  background: #6327fe;
+  color: #fff;
+}
+#input-money {
   border: 1px solid #bdbdbd;
   border-radius: 5px;
   padding: 0 6px;
   font-size: 13px;
 }
-.input-money::placeholder {
+#input-money::placeholder {
   color: #bdbdbd;
-  font-size: 13px;
+}
+.get-list {
+  background: #eae8fe;
+  border-radius: 5px;
+  border: 1px solid #bdbdbd;
+  overflow-y: auto;
+  padding: 12px;
+}
+.get-list li {
+  background: #fff;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.get-list li:first-child ~ li {
+  margin-top: 6px;
+}
+.get-list li img {
+  width: 18px;
+}
+.get-list li strong {
+  font-size: 14px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin-left: auto;
+}
+.section3 {
+  padding: 25px 27px 26px;
+  display: flex;
+  flex-direction: column;
+}
+.section3 .get-list {
+  flex-grow: 1;
+}
+.get-title {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 13px;
+}
+.total-price {
+  font-size: 12px;
+  text-align: right;
+  margin-top: 6px;
 }
