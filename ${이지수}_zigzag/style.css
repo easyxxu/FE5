@@ -20,6 +20,7 @@ ul {
   list-style-type: none;
   padding: 0;
 }
+
 /* font style*/
 .portfolio-title {
   font-size: 40px;
@@ -42,6 +43,9 @@ ul {
   font-weight: unset;
   color: #fff;
 }
+.contents .text-list li {
+  font-size: 14px;
+}
 
 /* layout */
 .l_wrapper {
@@ -56,7 +60,6 @@ ul {
 .title-header .portfolio-title {
   width: 26%;
 }
-
 .title-header .portfolio-about {
   display: flex;
   max-width: 590px;
@@ -99,25 +102,23 @@ ul {
 
 .rest-img-background {
   background: url(./images/photo01.png) no-repeat 100% center / cover;
-  /* text-align: center; */
   line-height: 169px;
   position: relative;
   width: 26%;
 }
 .craft-img-background {
   background: url(./images/photo02.png) no-repeat 100% center / cover;
-  /* text-align: center; */
   line-height: 169px;
   position: relative;
   width: 26%;
 }
 .scrap-img-background {
   background: url(./images/photo03.png) no-repeat 100% center / cover;
-  /* text-align: center; */
   line-height: 169px;
   position: relative;
   width: 26%;
 }
+
 [class$="-background"]::before {
   content: "";
   position: absolute;
@@ -135,14 +136,8 @@ ul {
   margin: 0 auto;
 }
 
-.contents .text-list {
-  padding-left: 24px;
-  margin: 0;
-  padding: 0;
-}
 .contents .text-list li {
   position: relative;
-  font-size: 14px;
   margin: 2px 0 0 0;
   padding: 0 0 4px 20px;
 }
@@ -156,7 +151,8 @@ ul {
   border-radius: 5px;
   background: #bd8fe8;
 }
-@media (max-width: 1088px) {
+
+@media (max-width: 1080px) {
   body {
     margin: 60px;
   }
@@ -164,10 +160,9 @@ ul {
     flex-direction: column;
     margin-bottom: 50px;
   }
-  .portfolio-title {
-    font-size: 50px;
-  }
-  .portfolio-title {
+  .title-header .portfolio-title {
+    width: 450px;
+    font-size: 45px;
     margin-bottom: 50px;
   }
   .title-header .portfolio-about {
@@ -198,7 +193,4 @@ ul {
     min-width: 302px;
     aspect-ratio: 120 / 80;
   }
-  /* .contents .text-article {
-    min-width: 330px;
-  } */
 }
