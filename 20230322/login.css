@@ -1,0 +1,191 @@
+@font-face {
+  font-family: "SpoqaHanSansNeo-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "SpoqaHanSansNeo-Regular";
+}
+h1,
+h2,
+p,
+input {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+button {
+  border: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+.wrapper {
+  width: 520px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+}
+header {
+  display: flex;
+  height: 58px;
+  position: relative;
+  border-bottom: 1px solid #c4c4c4;
+}
+.login-title {
+  margin: 0 auto;
+  line-height: 58px;
+  font-size: 16px;
+}
+.close-btn {
+  position: absolute;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  top: 22px;
+  right: 24px;
+  background: url(./img/close.png) no-repeat center / 16px;
+}
+main {
+  padding: 26px 24px 25px 24px;
+}
+
+.login h2 {
+  font-size: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0 20px 0;
+}
+input {
+  padding: 15px 16px;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  padding-left: 16px;
+}
+.inp-id.login-focus:focus {
+  outline: 2px solid #f4492e;
+  border: none;
+  border-radius: 5px;
+  outline-offset: -1px;
+}
+/* focus가 아니라 error일때 발생->수정필요 */
+.inp-pw.login-focus:focus {
+  outline: 2px solid #f4492e;
+  border: none;
+  border-radius: 5px;
+  outline-offset: -1px;
+}
+.inp-id {
+  margin-bottom: 10px;
+}
+
+.labl-hold {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0;
+  font-size: 16px;
+  cursor: pointer;
+  color: #767676;
+}
+.labl-hold::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-left: 2px;
+  margin-right: 8px;
+  vertical-align: -5px;
+  background: url(./img/uncheck-box.svg) 0 0 / 22px no-repeat;
+}
+
+/* focusing */
+.inp-hold:focus-visible + .labl-hold::before {
+  outline: 2px solid blue;
+  outline-offset: 1px;
+}
+
+.labl-hold::after {
+  content: "";
+  top: 0;
+  left: 6px;
+  display: inline-block;
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: url(./img/check-box.svg) 0 0 / 22px no-repeat;
+  transition: 0.3s ease;
+  opacity: 0;
+}
+.inp-hold:checked + .labl-hold::after {
+  left: 2px;
+  opacity: 1;
+}
+.login-btn {
+  padding: 14px 0;
+  color: #fff;
+  background: #2f80ed;
+  border-radius: 5px;
+}
+.join-find {
+  font-size: 14px;
+  color: #767676;
+  text-align: center;
+  margin: 20px auto auto auto;
+}
+.divider {
+  border-left: 1px solid #767676;
+  height: ;
+  margin: 0 16px;
+}
+.sns-login {
+  margin-top: 20px;
+}
+.sns-login li {
+  margin-bottom: 10px;
+}
+.sns-login a {
+  border: 1px solid #767676;
+  border-radius: 5px;
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+  position: relative;
+}
+.google-login::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 0;
+  left: 10px;
+  background: url(./img/icon-google.svg) 0 0 no-repeat center;
+}
+.sns-login .facebook-login {
+  border-color: #2d9cdb;
+}
+.sns-login .naver-login {
+  border-color: #00bf18;
+}
+.sns-login .kakao-login {
+  border-color: #f2c94c;
+}
