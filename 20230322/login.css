@@ -154,11 +154,29 @@ input {
 }
 .divider {
   border-left: 1px solid #767676;
-  height: ;
   margin: 0 16px;
 }
 .sns-login {
-  margin-top: 20px;
+  margin-top: 38px;
+  position: relative;
+}
+.sns-login::before {
+  content: "";
+  width: auto;
+  height: 1px;
+  background-color: #c4c4c4;
+  display: block;
+  margin-bottom: 29px;
+}
+.or {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  text-align: center;
+  transform: translate(215px, -10px);
+  background-color: #fff;
+  color: #767676;
 }
 .sns-login li {
   margin-bottom: 10px;
@@ -176,16 +194,44 @@ input {
   position: absolute;
   width: 22px;
   height: 22px;
-  top: 0;
-  left: 10px;
-  background: url(./img/icon-google.svg) 0 0 no-repeat center;
+  top: 15px;
+  left: 15px;
+  background: url(./img/icon-google.svg) no-repeat center;
 }
+
 .sns-login .facebook-login {
   border-color: #2d9cdb;
+}
+.facebook-login::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 14px;
+  left: 14px;
+  background: url(./img/icon-facebook.svg) no-repeat center;
 }
 .sns-login .naver-login {
   border-color: #00bf18;
 }
+.naver-login::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 14px;
+  left: 14px;
+  background: url(./img/icon-naver.svg) no-repeat center;
+}
 .sns-login .kakao-login {
   border-color: #f2c94c;
+}
+.kakao-login::before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 14px;
+  left: 14px;
+  background: url(./img/icon-kakao.svg) no-repeat center;
 }
