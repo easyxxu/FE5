@@ -1,0 +1,14 @@
+@mixin one {
+  width: 100px;
+  height: 100px;
+  color: white;
+  @content;
+}
+.test1 {
+  @include one;
+}
+.test2 {
+  @include one {
+    background: red;
+  }
+}

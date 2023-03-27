@@ -1,0 +1,11 @@
+.one {
+  $value: red;
+  color: $value;
+  .three {
+    background-color: $value;
+  }
+}
+//error
+// .two {
+//   color: $value;
+// }
