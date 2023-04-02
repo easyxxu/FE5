@@ -7,10 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>input style</title>
     <style>
-        .inp-Hold {
-            /* appearance: none; */
-        }
-
         .txt-hide {
             position: absolute;
             clip: rect(0 0 0 0);
@@ -39,7 +35,7 @@
         }
 
         /* focusing */
-        .inp-Hold:focus-visible+.labl-hold::before {
+        .inp-hold:focus-visible+.labl-hold::before {
             outline: 2px solid blue;
             outline-offset: 1px;
         }
@@ -52,12 +48,12 @@
             position: absolute;
             width: 22px;
             height: 22px;
-            background: url(./img/checkmark.png) 0 0 / 22px no-repeat;
+            background: url(./img/check-box.svg) 0 0 / 22px no-repeat;
             transition: 0.3s ease;
             opacity: 0;
         }
 
-        .inp-Hold:checked+.labl-hold::after {
+        .inp-hold:checked+.labl-hold::after {
             left: 1px;
             opacity: 1;
         }
@@ -65,7 +61,7 @@
 </head>
 
 <body>
-    <input class="txt-hide inp-Hold" type="checkbox" id="inpHold">
+    <input class="txt-hide inp-hold" type="checkbox" id="inpHold">
     <label for="inpHold" class="labl-hold">로그인 상태 유지</label>
     <!-- 형태-의미-상태 -->
 </body>

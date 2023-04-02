@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input style 연습</title>
+    <style>
+        div {
+            background: #eee;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-weight: bold;
+        }
+
+        .txt-hide {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        .labl-hold {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .labl-hold::before {
+            content: '';
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+            vertical-align: -5px;
+            border: 1px solid rgb(114, 182, 218);
+            background: rgb(173, 204, 220);
+            border-radius: 15px;
+        }
+
+        /* focusing */
+        .inp-hold:focus-visible+.labl-hold::before {
+            outline: 2px solid blue;
+            outline-offset: 1px;
+        }
+
+        .labl-hold::after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            top: 1px;
+            left: 1px;
+            width: 22px;
+            height: 22px;
+            background: url(./img/check-box.svg) no-repeat 0 0 / 22px;
+            transition: .3s ease;
+            opacity: 0;
+        }
+
+        .inp-hold:checked+.labl-hold::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- button -->
+    <div>
+        <p>1. input type="button"</p>
+        <input id="inp-btn" type="button" value="버튼">
+    </div>
+    <!-- text -->
+    <div>
+        <p>2. input type="text"</p>
+        <label for="inp-text">텍스트 입력</label>
+        <input type="text" id="inp-text">
+    </div>
+    <!-- email -->
+    <div>
+        <p>3. input type="email"</p>
+        <label for="inp-email">이메일 입력</label><input type="email" name="" id="inp-email">
+    </div>
+    <!-- tel -->
+    <div>
+        <p>4. input type="tel"</p>
+        <label for="inp-tel">전화번호 입력</label>
+        <input type="tel" id="inp-tel">
+    </div>
+    <!-- checkbox -->
+    <div>
+        <p>5. input type="checkbox"</p>
+        <input type="checkbox" id="inp-chck">
+        <label for="inp-chck">체크박스</label>
+    </div>
+    <!-- radio -->
+    <div>
+        <p>6. input type="radio"</p>
+        <input type="radio" name="" id="inp-radio">
+        <label for="inp-radio">라디오</label>
+    </div>
+    <div>
+        <input type="checkbox" id="inpHold" class="txt-hide inp-hold">
+        <label for="inpHold" class="labl-hold">로그인 상태 유지</label>
+    </div>
+</body>
+
+</html>
