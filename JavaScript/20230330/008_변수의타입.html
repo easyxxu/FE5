@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        console.log(typeof 'hello')
+        console.log(typeof "hello")
+        // eascape 문자
+        // \' 작은 따옴표, \" 큰따옴표, \t 가로탭, \n 줄바꿈
+        console.log(typeof 'i\'m so happy')
+
+        //number
+        console.log(typeof 10) // number
+        console.log(typeof 10.1) // number
+        console.log(typeof NaN) // number
+
+        //boolean
+        console.log(typeof true)
+        console.log(typeof false)
+
+        //undefined
+        console.log(typeof undefined) // undefined
+        let a;
+        console.log(a)
+
+        //null(값이 비어있음을 명시적으로 나타냄)
+        console.log(typeof Null) // object // 설계 오류인 것을 개발자가 인정
+
+        //bigint(2^53 - 1 보다 큰 정수)
+        console.log(90071992547409960n + 90071992547409960n)
+
+        //symbol
+        console.log(typeof Symbol())
+
+        ////////////////////////////////////
+
+        //Object Types
+        console.log(typeof function () { })
+        //Object
+        console.log(typeof [10, 20, 30]) //배열
+        console.log(typeof { a: 10, b: 20 }) //object
+        console.log(typeof /정규표현식/gi)
+
+        //형변환(다른 type -> number)
+        console.log(+'10')
+        console.log(Number('10')) //권하지 않음
+        console.log(parseInt('10')) //권함
+        console.log(parseFloat('10.1')) //권함
+        console.log(parseInt(true)) // NaN
+        console.log(parseInt(false)) // NaN
+        console.log(Number(true)) // 1
+        console.log(Number(false)) // 0
+
+        //형변환(다른 type -> string)
+        let hojun = 10;
+        console.log(hojun.toString()) // 권함
+        //10.toString() 10.까지를 소숫점으로 봄
+        console.log('' + 10) // '10'
+        console.log(String(10))
+
+        // 형변환(다른 type -> boolean)
+        let hojun2 = 10;
+        console.log(Boolean(-1))
+        console.log(Boolean(0))
+        console.log(Boolean(1000))
+        console.log(!!1000)
+        console.log(!!hojun2)
+    </script>
+</body>
+
+</html>
