@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        let n1 = 10000;
+        let n2 = 10.123123;
+        let n3 = 31;
+        let n4 = 1001;
+
+        let s1 = '100000000000';
+        let s2 = '100,000,000,000';
+
+        console.log(parseInt(n1)); // 10000
+        console.log(parseInt(n2)); //10 (권장)
+        console.log(~~(n2)) // 10 (코테에서만)
+        console.log(parseInt(n3, 2)) // 2진법으로 바꾸는 것이 아니라
+        console.log(parseInt(n4, 2)) // 2진법으로 된 숫자를 10진법으로 바꾸는 것
+        console.log(parseInt(n4, 8)) // 8진법으로 된 숫자를 10진법으로 바꾸는 것
+        console.log(parseInt(n4, 10)) // 10진법으로 된 숫자를 10진법으로 바꾸는 것
+
+    </script>
+</body>
+
+</html>
