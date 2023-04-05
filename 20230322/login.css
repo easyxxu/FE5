@@ -115,7 +115,8 @@ input {
   margin-left: 2px;
   margin-right: 8px;
   vertical-align: -5px;
-  background: url(./img/uncheck-box.svg) 0 0 / 22px no-repeat;
+  /* background: url(./img/uncheck-box.svg) 0 0 / 22px no-repeat; */
+  background: url("./img/css_sprites.png") -52px -10px;
 }
 
 /* focusing */
@@ -127,13 +128,13 @@ input {
 .labl-hold::after {
   content: "";
   top: 0;
-  left: 6px;
+  left: 2px;
   display: inline-block;
   position: absolute;
   width: 22px;
   height: 22px;
-  background: url(./img/check-box.svg) 0 0 / 22px no-repeat;
-  transition: 0.3s ease;
+  background: url("./img/css_sprites.png") -10px -10px;
+  transition: 0.1s ease;
   opacity: 0;
 }
 .inp-hold:checked + .labl-hold::after {
@@ -189,49 +190,36 @@ input {
   text-align: center;
   position: relative;
 }
-.google-login::before {
+[class^="icon-"]::before {
   content: "";
   position: absolute;
-  width: 22px;
-  height: 22px;
-  top: 15px;
+  display: block;
+  width: 28px;
+  height: 28px;
+  top: 12px;
   left: 15px;
-  background: url(./img/icon-google.svg) no-repeat center;
+  background: url("./img/img-sns.png") no-repeat;
+  background-size: 192px 48px;
+}
+.icon-google::before {
+  background-position: -10px -10px;
 }
 
-.sns-login .facebook-login {
+.sns-login .icon-facebook {
   border-color: #2d9cdb;
 }
-.facebook-login::before {
-  content: "";
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  top: 14px;
-  left: 14px;
-  background: url(./img/icon-facebook.svg) no-repeat center;
+.icon-facebook::before {
+  background-position: -58px -10px;
 }
-.sns-login .naver-login {
+.sns-login .icon-naver {
   border-color: #00bf18;
 }
-.naver-login::before {
-  content: "";
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  top: 14px;
-  left: 14px;
-  background: url(./img/icon-naver.svg) no-repeat center;
+.icon-naver::before {
+  background-position: -106px -10px;
 }
-.sns-login .kakao-login {
+.sns-login .icon-kakao {
   border-color: #f2c94c;
 }
-.kakao-login::before {
-  content: "";
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  top: 14px;
-  left: 14px;
-  background: url(./img/icon-kakao.svg) no-repeat center;
+.icon-kakao::before {
+  background-position: -154px -10px;
 }
