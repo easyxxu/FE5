@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change</title>
+    <style>
+        .container {
+            margin: 0 auto;
+            width: 600px;
+            height: 600px;
+            text-align: center;
+        }
+
+        .canvas {
+            margin: 0 auto;
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .btn-list {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .canvas.red {
+            background-color: red;
+        }
+
+        .canvas.yellow {
+            background-color: yellow;
+        }
+
+        .canvas.green {
+            background-color: green;
+        }
+
+        .canvas.reset {
+            background-color: initial;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <h1>버튼을 누르면 캔버스가 색칠됩니다</h1>
+        <div class="canvas">
+        </div>
+        <ul class="btn-list">
+            <li><button type="button" class="red">빨강</button></li>
+            <li><button type="button" class="yellow">노랑</button></li>
+            <li><button type="button" class="green">초록</button></li>
+        </ul>
+        <button type=" button" class="reset">초기화</button>
+    </main>
+    <script>
+        const canvas = document.querySelector('.canvas');
+        // const redBtn = document.querySelector('.btn-red');
+        // const yellowBtn = document.querySelector('.btn-yellow');
+        // const greenBtn = document.querySelector('.btn-green');
+        // const resetBtn = document.querySelector('.resetBtn');
+
+        const btns = document.querySelectorAll('button');
+
+        btns.forEach(btn => btn.addEventListener('click', () => {
+            canvas.className = 'canvas';
+            canvas.classList.add(btn.className);
+        }))
+
+        // redBtn.addEventListener('click', () => {
+        //     canvas.classList.remove('red','yellow','green');
+        //     canvas.classList.add('red');
+        //     console.log("빨간색 버튼 눌림");
+        // })
+
+        // yellowBtn.addEventListener('click', () => {
+        //     canvas.classList.remove('red','yellow','green');
+        //     canvas.classList.add('yellow');
+        //     console.log('노란색 버튼 눌림');
+        // })
+
+        // greenBtn.addEventListener('click', () => {
+        //     canvas.classList.remove('red','yellow','green');
+        //     canvas.classList.add('green');
+        //     console.log('초록색 버튼 눌림');
+        // })
+        // //reset button
+        // resetBtn.addEventListener('click', () => {
+        //     canvas.classList.remove('red','yellow','green');
+        //     window.alert('초기화되었습니다.');
+        // })
+    </script>
+</body>
+
+</html>

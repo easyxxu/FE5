@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    점심 식단
+    <article id="container">
+        <ul>
+            <li>탕수육</li>
+            <li class="item-second">유산슬</li>
+            <li>짜장면</li>
+        </ul>
+    </article>
+    저녁 식단
+    <article>
+        <ul>
+            <li>된장국</li>
+            <li class="item-second">김치찌개</li>
+            <li>해장국</li>
+        </ul>
+    </article>
+    <script>
+        // console.log(document.getElementsByTagName('li')[0]); //ul의 첫번째 li 태그 가져오기
+        // console.log(document.getElementsByClassName('item-second'));
+
+        const container = document.getElementById('container');
+        // console.log(container.querySelector('li'));
+        // console.log(container.getElementsByClassName('item-second'));
+        // console.log(document.querySelectorAll('li'));
+        // console.log(container.querySelector('li:last-child')); //ul의 마지막 li 찾기
+        console.log(container.getElementsByTagName('li'));
+        console.log(container.querySelectorAll('li'));
+
+        container.querySelector('.item-second').textContent = '잡채밥'; // 텍스트 컨텐츠 변경
+        container.querySelector('.item-second').classList.add('new'); // 클래스 추가
+
+        // const listItem = document.createElement('li');
+        // container.append(listItem);
+
+        // const target = document.querySelector('.item-second');
+        // target.remove();
+    </script>
+</body>
+
+</html>
