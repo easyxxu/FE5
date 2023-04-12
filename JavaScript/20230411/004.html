@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>docu</title>
+</head>
+
+<body>
+    <h2>hi</h2>
+    <p>hello</p>
+
+    <script>
+        const txt = document.querySelector('p');
+        const title = document.querySelector('h2');
+        const name = "<img src='x' onerror='alert(123123)'>";
+        //onerror : img 렌더링 실패하여 에러 출력됨
+
+        txt.innerHTML = name;
+        title.style.color = 'red';
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>progressbar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #fff;
+        }
+
+        #mainForm {
+            width: 460px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #FF8787;
+        }
+
+        #mainForm fieldset {
+            border: none;
+        }
+
+        /* 
+    redered legend : https://html.spec.whatwg.org/multipage/rendering.html#rendered-legend 
+    legend는 fieldset의 패딩을 무시합니다.
+*/
+        #mainForm legend {
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        #mainForm label {
+            display: block;
+        }
+
+        #mainForm input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            /* 그림자의 수평거리, 수직거리, 그림자 테두리 크기, 그림자의 위치(inset: 내부로)  */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+        }
+
+        /* 가상클래스 valid. input에 입력받은 값이 유효하다면을 의미합니다. */
+        #mainForm input:valid {
+            background-color: #e7b0b0;
+        }
+
+        #mainForm button {
+            /* fieldset은 BFC를 생성하기 때문에 해제가 필요 없습니다. https://html.spec.whatwg.org/multipage/rendering.html#the-fieldset-and-legend-elements */
+            float: right;
+            padding: 10px;
+            margin-left: 10px;
+            background-color: #F8C4B4;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #mainForm progress {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="mainForm">
+        <fieldset>
+            <legend>JS 스터디 모집 설문조사</legend>
+            <!-- progress : 작업의 완료 정도를 나타내는 요소입니다. -->
+            <progress max="100" value="0" class="bar-progress"></progress>
+            <p class="msg-notice">설문지를 작성하세요!</p>
+
+            <label for="q1">질문 1. 무엇을 가장 배우고 싶으세요?</label>
+            <input type="text" id="q1" required>
+            <label for="q2">질문 2. 시간은 언제가 적당한가요?</label>
+            <input type="text" id="q2" required>
+            <label for="q3">질문 3. 몇 시간정도 예상하세요?</label>
+            <input type="text" id="q3" required>
+            <label for="q4">질문 4. 난이도를 조정한다면?</label>
+            <input type="text" id="q4" required>
+            <label for="q5">질문 5. 끝으로 하고싶은 말이 있나요?</label>
+            <input type="text" id="q5" required>
+
+            <button type="submit">제출</button>
+            <button type="reset" class="btn-reset">초기화</button>
+        </fieldset>
+    </form>
+    <script>
+        /* const bar = document.querySelector('progress');
+        const inp = document.querySelectorAll('input');
+        const btnReset = document.querySelector('.btn-reset');
+        const msgNotice = document.querySelector('.msg-notice');
+        const mentDefault = msgNotice.innerText;
+        const ment = ['다음 답변으로 넘어가주세요', '오오 그렇군요', '반밖에 안남았어요!', '거의 다했어요!!', '감사합니다^_^'];
+
+        //input 입력됨에 따라 progress bar 채워짐
+        inp.forEach((event, index) => {
+            event.addEventListener('input', () => {
+                bar.value = (100 / inp.length) * (index + 1);
+                msgNotice.textContent = ment[index];
+            })
+        })
+        //초기화 버튼
+        btnReset.addEventListener('click', () => {
+            bar.value = 0;
+            msgNotice.textContent = mentDefault;
+        })
+        */
+        //재현 강사님 코드
+        const mainForm = document.querySelector('#mainForm');
+        const progressBar = mainForm.querySelector('.bar-progress');
+        const message = mainForm.querySelector('.msg-notice');
+        const inputs = mainForm.querySelectorAll('input');
+        const btnReset = mainForm.querySelector('button[type="reset"]');
+
+        mainForm.addEventListener('keyup', () => {//keyup : key를 눌렀다가 떼면 안에 있는 코드 실행됨
+            let validCnt = 0;
+            inputs.forEach((item) => {
+                if (item.validity.valid) {//validity : input이 유효한지 아닌지에 대한 정보들이 담김
+                    validCnt++;
+                }
+                switch (validCnt) {
+                    case 1:
+                        message.textContent = 'start!';
+                        progressBar.setAttribute('value', '20');
+                        break;
+                    case 2:
+                        message.textContent = '더더!';
+                        progressBar.setAttribute('value', '40');
+                        break;
+                    case 3:
+                        message.textContent = '반 했음요!';
+                        progressBar.setAttribute('value', '60');
+                        break;
+                    case 4:
+                        message.textContent = '거의 다함요!';
+                        progressBar.setAttribute('value', '80');
+                        break;
+                    case 5:
+                        message.textContent = '다함요! 감사함요';
+                        progressBar.setAttribute('value', '100');
+                        break;
+                    default:
+                        message.textContent = '설문지를 작성하세요!';
+                        progressBar.setAttribute('value', '0');
+                }
+            })
+        });
+
+        btnReset.addEventListener('click', () => {
+            message.textContent = '설문지를 작성하세요!';
+            progressBar.setAttribute('value', '0');
+        })
+    </script>
+</body>
+
+</html>
