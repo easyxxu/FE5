@@ -38,17 +38,19 @@ function 함수(a = 10, b = 20, c = 30) {
 // 3. roro 기법 원리 설명
 /* roro 기법이란? 입력되는 아규먼트가 매우 많은 아래의 함수의 경우 호출하는 쪽에서 어떤 값이 들어가는지 명확히 알기 어렵고 읽기도 어려움*/
 window.addNewControl("Title", 20, 30, 10, 100, true);
-// 코드를 읽어 내려가다가 hello함수를 만났다면 기분이 어떨까요?? (저렇게 함수명을 짜면 힘듬)
+// 코드를 읽어 내려가다가 위의 함수를 만났다면 기분이 어떨까요?? (저렇게 함수명을 짜면 힘듬)
+// python 형식
 window.addNewControl(
-  (title = "Title"),
-  (xPosition = 20),
-  (yPosition = 30),
-  (width = 10),
-  (height = 100),
-  (drawingNow = true)
+  title = "Title",
+  xPosition = 20,
+  yPosition = 50,
+  width = 100,
+  height = 50,
+  drawingNow = true
 );
 //roro 기법을 모든 함수에서 사용하나요?
 function sum(a, b) {}
+
 //어떻게 사용하고 원리는 무엇일까요?
 function loginInfo({
   userLevel = "Gold",
@@ -61,13 +63,14 @@ function loginInfo({
   console.log("...function...");
   console.log(userLevel, writing, reading, channel, backup, socialLogin);
 }
+
 loginInfo({
   userLevel: "Silver",
   socialLogin: false,
   backup: "3 days", // 중간에 생략된 값도 있고 순서까지 뒤바뀜
 });
 
-//원리 (몰라도 상관없어)
+//원리 (몰라도 상관없음)
 let one;
 let two;
 let three;
