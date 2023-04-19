@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        // 추상화 해보기
+        const jisu = {
+            name: 'jisu',
+            age: '25',
+            address: '경기도 평택시',
+            workout: function (pilatesLv) {
+                console.log('오늘도 운동 성공')
+                pilatesLv.levelUp();
+            }
+        }
+        const pilatesLv = {
+            lv: 1,
+            levelUp: function () {
+                this.lv++;
+            }
+        }
+        jisu.workout(pilatesLv)
+
+        //실습 : 음식 이름의 배열을 전달하면 배열안에서 랜덤하게 메뉴를 뽑아내는 기능을 가진 로봇객체의 생성자를 만들어보세요. 예를들어 new FoodPicker(['짜장면', '청국장', '김치찌게']) 이렇게 인스턴스를 만들면 인스턴스는 짜장면, 청국장, 김치찌게 중에 한 가지 메뉴를 랜덤하게 콘솔로 출력하는 기능을 가져야합니다.
+        function FoodPicker(lunch) {
+            this.menu = lunch
+            this.whatFood = function () {
+                console.log(`오늘 점심은 ${this.menu[Math.floor(Math.random() * this.menu.length)]}`)
+            }
+        }
+        let lunch = new FoodPicker(['짜장면', '청국장', '김치찌개'])
+        lunch.whatFood()
+
+        // 프로토타입 이용하기
+        //실습: 우리가 만들었던 음식 로봇객체의 메서드를 프로토타입으로 분리해보세요, 그리고 객체의 메서드가 서로 동일한 주소를 참조하는지 확인해보세요.
+        function FoodPicker2(lunch) {
+            this.menu = lunch
+        }
+
+        FoodPicker2.prototype.whatFood = function () {
+            console.log(`${this.menu[Math.floor(Math.random() * this.menu.length)]}`)
+        }
+
+        function Idol() {
+            this.gender = 'woman'
+        }
+        Idol.prototype.debut = '2022'
+        const nmixx = new Idol()
+        const lesserafim = new Idol()
+        const newjens = new Idol()
+
+        //실습2: 우리가 객체지향 개념에서 만들었던 ‘나’ 와 ‘대상’ 객체를 생성자를 통해서 만들어 볼 수 있도록 코드를 수정해봅시다.
+        function Jisu() {
+            this.name = 'jisu',
+                this.age = 25,
+                this.gender = 'woman'
+        }
+        Jisu.prototype.workout = function (exercise) {
+            console.log(`열심히 먹은자 오늘도 뛰어라! 오늘은 ${exercise} 하는 날`)
+        }
+        let jisu = new Jisu()
+        jisu.workout('필라테스')
+        let jisu2 = new Jisu()
+        jisu2.workout('헬스장')
+    </script>
+</body>
+
+</html>
