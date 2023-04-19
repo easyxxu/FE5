@@ -12,7 +12,7 @@
 <body>
     <article id="app">
         <h2>포켓몬 케러셀</h2>
-        <button type="button" class="prevBtn">&lt;</button>
+        <!-- <button type="button" class="prevBtn">&lt;</button> -->
         <ul class="list-item">
             <li><img src="https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/jammanbo.png" alt=""></li>
             <li><img src="https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/ev.png?raw=true" alt="">
@@ -24,19 +24,58 @@
             <li><img src="https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/pulin.png" alt=""></li>
             <li><img src="https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/weirdseed.png" alt=""></li>
         </ul>
-        <button type="button" class="nextBtn">></button>
+        <!-- <button type="button" class="nextBtn">></button> -->
+    </article>
+    <article>
+        hello
+        <p>sdfsdf
+        </p>
+        <div>
+            <ul>
+                <li>hei</li>
+            </ul>
+        </div>
     </article>
     <script>
-        const prevBtn = document.querySelector('.prevBtn')
-        const nextBtn = document.querySelector('.nextBtn')
-        const listItem = document.querySelector('.list-item')
-        prevBtn.addEventListener('click', e => {
-            if ()
-                listItem.style.transform = 'translate(-50%, -50%) rotateX(0deg) rotateY(51deg)'
+        const arrPic = [
+            "https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/jammanbo.png",
+            "https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/ev.png?raw=true",
+            "https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/ev.png?raw=true",
+            "https://raw.githubusercontent.com/nugurejeil/sharingPhoto/main/ev.png?raw=true",
+        ];
+        const center = document.querySelector('.list-item');
+
+        arrPic.forEach((item) => {
+            const elLi = document.createElement('li');
+            elLi.innerHTML = `<img src="${item}" alt="">`;
+            center.appendChild(elLi);
         })
-        nextBtn.addEventListener('click', e => {
-            listItem.style.transform
-        })
+
+        const items = document.querySelectorAll('.list-item li');
+
+        const radius = items[0].offsetWidth * items.length / 3.14 / 2;
+
+        items.forEach((item, index) => {
+            item.style.transform = `rotateY(${360 / items.length * index}deg) translateZ(${radius}px)`;
+        });
+
+
+        const angle = 360 / items.length;
+        let currAngle = 0;
+
+        document.addEventListener('click', function (event) {
+            // 화면 오른쪽을 눌렀을 경우
+            if (window.innerWidth / 2 < event.clientX) {
+                currAngle += angle;
+
+                // 화면 왼쪽을 눌렀을 경우
+            } else {
+                currAngle -= angle;
+            }
+            center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
+        });
+
+
     </script>
 </body>
 
