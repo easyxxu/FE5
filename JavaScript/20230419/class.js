@@ -72,12 +72,13 @@ class MakingSausage {
 }
 
 class FiresSausage extends MakingSausage {
-  constructor(ingredient1, ingredient2) {
-    super(ingredient1, ingredient2);
-  }
+  // 생성자 함수가 없다면 자동으로 super 함수가 호출되어 부모 클래스의 프로퍼티를 상속받는다
+  // constructor(ingredient1, ingredient2) {
+  //   super(ingredient1, ingredient2);
+  // }
   tasteFire() {
     this.taste();
-    console.log("소시지에 불맛 추가!!");
+    console.log("거기에 따블로 불맛 추가!!");
   }
 }
 
