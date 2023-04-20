@@ -16,8 +16,8 @@
         // 4. 할 일을 저장하고(addItem), 할 일의 목록을 보여주며(getItems), 할 일의 남은 갯수를 반환하는(getLeftTodoCount) 세 가지 메소드를 가집니다.
         class Todo {
             constructor(item, finished) {
-                this.item = item
-                this.finished = finished
+                this.item = item;
+                this.finished = finished;
             }
 
             changeState() {
@@ -37,13 +37,16 @@
                 this.todoList.push(todo);
             }
             getItems() {
-                return this.todoList
+                return this.todoList;
             }
             // 아직 안한(해야할) 일의 갯수를 받아야함 -> false인 것만!
             getLeftTodoCount() {
-                return this.todoList.filter(item => {
+                // return this.todoList.reduce((total, current) => {
+                //     current.finished === false ? ++total : total;
+                // }, 0);
+                return this.todoList.filter(item =>
                     item.finished === false
-                }).length;
+                ).length;
             }
         }
 
@@ -53,11 +56,49 @@
         manager.addItem('국 먹기');
         manager.getItems();
         manager.getItems()[0].finished = true;
-        manager.getLeftTodoCount();
-        //todos.addItem('달리기');
-        //todos.getItems(); -> 배열이 반환됨 Todo{item: '달리기', finished: false}
-        //todos.getLeftTodoCount(); // 할일이 얼마나 남았는지 반환
-        //todos.getItems()[0].changeState(); // 상태가 변함 카운트도 줄어듬
+        // manager.getLeftTodoCount();
+
+
+        // 1. 할것 객체
+        // class Todo {
+        //     constructor(item, finishied) {
+        //         this.item = item;
+        //         this.finishied = finishied;
+        //     }
+
+        //     changeState() {
+        //         this.finishied = !this.finishied;
+        //     }
+        // }
+
+        // class TodoManager {
+        //     constructor() {
+        //         this.todoList = [];
+        //     }
+
+        //     addItem(item, finishied = false) {
+        //         const todo = new Todo(item, finishied);
+        //         this.todoList.push(todo);
+        //     }
+
+        //     getItems() {
+        //         return this.todoList;
+        //     }
+
+        //     getLeftTodoCount() {
+        //         // return this.todoList.reduce((total, current) => current.finishied === false ? ++total : total, 0);
+
+        //         return this.todoList.filter((item) => item.finishied === false).length;
+        //     }
+
+        //     // if (current.finishied === false) {
+        //     //     return ++total;
+        //     // } else {
+        //     //     return total;
+        //     // }
+
+        // }
+
     </script>
 </body>
 
