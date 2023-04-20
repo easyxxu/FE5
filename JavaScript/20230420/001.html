@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 실습 : 소시지를 만드는 클래스
+        // 1. 생성자 함수는 두 가지 매개변수를 전달받을 수 있으며 전달되는 매개변수에 따라 소시지의 맛이 결정됨
+        // 2. 소시지 객체는 taste라는 메서드 존재. 생성자함수에서 전달받은 재료에 따라 맛을 나타내는 콘솔로그를 출력하는 역할을 함2. (예시 : ‘소고기’ 와 ‘파’ 를 매개변수로 전달하였을 경우, ‘소고기와 파 맛이 난다!’ 는 콘솔 메세지를 출력합니다.)
+        //3. 소시지 클래스를 상속받는 FiresSausage 파생클래스를 생성해봅니다. 파생클래스의 taste 메서드를 실행하면 콘솔 메세지에 불맛이 나기 시작합니다.
+
+        // 내가 만든 소시지~ 너를 위해 구웠지~
+        class MakingSausage {
+            constructor(ingredient1, ingredient2) {
+                this.ingredient1 = ingredient1;
+                this.ingredient2 = ingredient2;
+            }
+            taste() {
+                console.log(`${this.ingredient1}와 ${this.ingredient2} 맛이 난다!`);
+            }
+        }
+
+        class FiresSausage extends MakingSausage {
+            // 생성자 함수가 없다면 자동으로 super 함수가 호출되어 부모 클래스의 프로퍼티를 상속받는다
+            // constructor(ingredient1, ingredient2) {
+            //   super(ingredient1, ingredient2);
+            // }
+            tasteFire() {
+                this.taste();
+                console.log("거기에 따블로 불맛 추가!!");
+            }
+        }
+
+        const sausage = new FiresSausage("소고기", "파");
+        sausage.tasteFire();
+
+        // 재현 강사님 소시지
+        class Sausage {
+            constructor(el1, el2) {
+                this.inside1 = el1;
+                this.inside2 = el2;
+            }
+            taste() {
+                console.log(`WoW ~~ ${this.inside1} 맛과 ${this.inside2} 맛이 나는 소시지다~!`);
+            }
+        }
+
+        class FiresSausage2 extends Sausage {
+            constructor(el1, el2, el3) {
+                // this.inside1 = el1;
+                // this.inside2 = el2;
+                super(el1, el2);
+                this.inside3 = el3;
+            }
+            //오버로딩 
+            //오버라이딩
+            taste() { // 부모 클래스의 메서드와 이름이 동일함-> 자식 클래스의 taste가 실행됨
+                console.log(`${this.inside1} 맛과 ${this.inside2} 맛과 ${this.inside3} 맛이 나는 소시지다!`);
+            }
+        }
+        const fireSausage = new FiresSausage2('파', '양파', '후추');
+        fireSausage.taste();
+    </script>
+</body>
+
+</html>
