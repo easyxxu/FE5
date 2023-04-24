@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서버 통신해보기</title>
+</head>
+
+<body>
+    <p>hellow lions!!</p>
+    <button type="button">통신하기</button>
+    <script>
+        const btn = document.querySelector("button");
+        // btn.addEventListener('click', xhrRequest);
+        let result;
+        function xhrRequest() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'message.txt'); // 초기화 완료(초기세팅)
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    result = xhr.responseText; //데이터를 텍스트형식으로 받아옴
+
+                    document.querySelector('p').textContent = result;
+                }
+            }
+            xhr.send();
+        }
+        xhrRequest();
+        console.log(result)
+    </script>
+</body>
+
+</html>
