@@ -26,8 +26,8 @@
                             onSuccess(userName);
                         } else {
                             onError(new Error('user not found'));
-
                         }
+                        console.log(result) //해당하는 오브젝트 반환
                     }
                 }
                 xhr.send();
