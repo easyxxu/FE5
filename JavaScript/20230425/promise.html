@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+
+<body>
+    <script>
+        // 커피 주문하는 프로미스 객체 생성. 생성자에는 약속을 지키기 위한 resolve와 약속을 지키지 못했을 때를 대비한 reject 두 가지를 인자로 전달함
+        // (resolve, reject) : excutor(실행자)
+        // resolve는 함수
+        const orderCoffee = new Promise((resolve, reject) => {
+            const requestObj = new XMLHttpRequest(); // XHR 객체 생성
+            requestObj.open('GET', 'orderCoffee.txt'); // 요청 초기화. 통신방법과 요청을 발신할 대상의 주소 전달
+            requestObj.onreadystatechange = () => { // readystate가 변화하면 실행되는 이벤트 리스너
+                if (requestObj.readyState === 4 && requestObj.status === 200) {
+                    const result = requestObj.responseText;
+
+                    // resolve 메소드가 실행되면 then 메소드가 자동으로 호출됨
+                    resolve(result);
+                }
+            };
+            requestObj.send();
+        });
+
+        orderCoffee.then((asyncResult) => { // asyncResult == 23줄의 result
+            console.log(asyncResult);
+            console.log("약속이 실행됨");
+            return asyncResult;
+        }).catch((error) => {
+            console.log(new Error(""))
+        })
+    </script>
+</body>
+
+</html>
