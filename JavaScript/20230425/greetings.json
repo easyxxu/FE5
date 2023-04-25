@@ -1,0 +1,7 @@
+{
+  "greetings": [
+    { "userName": "jisu", "greetings": "hi" },
+    { "userName": "suzy", "greetings": "hello" },
+    { "userName": "jieun", "greetings": "hi !" }
+  ]
+}
