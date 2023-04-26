@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>리액트 1분만에 추가해보기!</title>
+</head>
+
+<body>
+    <h1>내 html에 리액트 1분만에 추가해보기!</h1>
+    <p>단 1분만에 설치없이 리액트를 추가할 수 있다구요?</p>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <!-- development(개발용) : 개발자가 보기편하게 들여쓰기가 되어 있는 코드를 볼 수 있음 -->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script><!-- 렌더링에 집중된 파일 -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script><!-- 여러 프로그래밍 언어를 자바스크립트로 바꿔줌 -->
+    <script type="text/babel">
+        // react 컴포넌트 정의하기
+        const el = React.createElement;
+
+        class HelloButton extends React.Component {
+            constructor(props) {
+                super(props);
+
+                this.state = { liked: false };
+            }
+
+            render() {
+                if (this.state.liked) {
+                    return 'Hello World!';
+                }
+
+                return (
+                    <button onClick={() => this.setState({ liked: true })}>
+                        Hello
+                    </button>
+                );
+            }
+        }
+
+        // DOM에 리액트 컴포넌트 랜더링하기
+        const domContainer = document.querySelector('#root');
+        ReactDOM.render(el(HelloButton), domContainer);
+    </script>
+</body>
+
+</html>
