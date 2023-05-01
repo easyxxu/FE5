@@ -16,7 +16,7 @@
             searchUser(userName, password) {
 
                 return new Promise((resolve, reject) => {
-                    fetch('user.json')
+                    fetch('users.json')
                         .then((data) => {
                             return data.json()
                         }).then((response) => {
@@ -52,7 +52,6 @@
             }
         }
         const userStorage = new UserStorage();
-
         const userName = prompt('your name');
         const password = prompt('your password');
 
@@ -60,7 +59,14 @@
             .then((result) => {
                 return userStorage.sayHi(result);
             }).then((result) => {
-                alert(`nice to meet you. ${userName}님 ${result.greetings}`);
+                alert(`nice to meet you. ${name}님 ${result.greetings}`);
+                /**
+                 * ! 원본: ${result.name} ${result.greetings}
+                 * ! ${name} ${result.greetings} 은 에러 발생 X 
+                 * ! ${name} ${greetings} 하면 greetings에서 에러남 
+                 * ! name은 되고 greetings은 안되는 이유
+                 * ! name이 프로퍼티로서 출력된것이 아닌 것인지, sayHi에서 resolve로 보내진 객체의 프로퍼티의 이름으로 출력하면 안되는 것인지
+                 */
             }).catch((errorMsg) => {
                 console.log(new Error(errorMsg))
             }); 
