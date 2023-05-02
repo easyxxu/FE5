@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSX</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // const root = document.querySelector('#root');
+        // const header = '<div>header</div>';
+        // const main = '<div>main</div>';
+        // const product = '<div>product</div>';
+        // const footer = '<div>footer</div>';
+
+        // root.innerHTML =
+        //     `
+        //         ${header}
+        //         ${main}
+        //         ${product}
+        //         ${footer}
+        //     `;
+
+        // JSX 
+        const header = <div>header</div>;
+        const main = <div>main</div>;
+        const product = <div>product</div>;
+        const footer = <div>footer</div>;
+
+        const body = (
+            <div>
+                {header}
+                {main}
+                {product}
+                {footer}
+            </div>
+        );
+
+        const domContainer = document.querySelector('#root');
+        // const root = ReactDOM.createRoot(domContainer); // React18부터는 ReactDOM.createRoot() 사용, React 애플리케이션에서 루트 노드를 만들고, 그 루트 노드를 기반으로 리액트 앱을 렌더링하는 데 사용됨
+        // root.render(body);
+        ReactDOM.createRoot(domContainer).render(body);
+    </script>
+</body>
+
+</html>

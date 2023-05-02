@@ -7,6 +7,12 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <title>위니브 샵</title>
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -21,27 +27,29 @@
             const product = await response.json()
             return product
         }
+        function App() {
+            return getProductData().then(product => {
+                const mainElement = document.createElement("main")
 
-        getProductData().then(product => {
-            const mainElement = document.createElement("main")
+                const h1 = document.createElement('h1')
+                h1.textContent = '상품목록'
+                mainElement.appendChild(h1);
 
-            const h1 = document.createElement('h1')
-            h1.textContent = '상품목록'
-            mainElement.appendChild(h1);
+                const ul = document.createElement('ul')
+                mainElement.appendChild(ul);
 
-            const ul = document.createElement('ul')
-            mainElement.appendChild(ul);
-
-            product.forEach(item => {
-                const productDetail = document.createElement('li')
-                productDetail.innerHTML = `
+                product.forEach(item => {
+                    const productDetail = document.createElement('li')
+                    productDetail.innerHTML = `
                 <h2>${item.productName}</h2>
                 <p>${item.price}</p>
                 `
-                ul.append(productDetail)
+                    ul.append(productDetail)
+                })
+                root.append(mainElement)
             })
-            root.append(mainElement)
-        })
+        }
+        App();
     </script>
 
 </body>

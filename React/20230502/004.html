@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>JSX</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Header(menuOne, menuTwo) {
+            return (
+                <div>header
+                    <div>menu</div>
+                    <div>{menuOne}</div>
+                    <div>{menuTwo}</div>
+                </div>
+            )
+        }
+        function Main({ name, age }) {
+            console.log(name, age)
+            return (
+                <div>main
+                    <h1>Hello, {name}</h1>
+                    <p>you are {age} years old</p>
+                </div>
+            )
+        }
+        function Product() {
+            return (
+                <div>product
+                    <div>Best Seller 1</div>
+                    <div>Best Seller 2</div>
+                    <div>Best Seller 3</div>
+                    <div>Best Seller 4</div>
+                    <div>Best Seller 5</div>
+                </div>
+            )
+        }
+        function Footer() {
+            return <div>footer</div>
+        }
+        function f() {
+            return 100
+        }
+        function logout() {
+            return <button>logout</button>
+        }
+        function login() {
+            return (
+                <div>
+                    <input type="text" />
+                    <input type="password" />
+                    <button>login</button>
+                </div>
+            )
+        }
+        function Test(props) {
+            console.log(props)
+            return null
+        }
+        const login = false
+
+        const body = (
+            <div>
+                {/* 값을 전달하는 두가지 방법 */}
+                {Header('about', 'product')}
+                <Main name='jisu' age='25' />
+
+                {/* 여러가지 표현식 사용 가능*/}
+                {console.log('hello')}
+                {1 + 1}
+                {f()}
+                {login ? 'one' : 'two'}
+                {login ? <logout /> : <login />}
+
+                <Test>
+                    hello world 1
+                    <h1>hello world 2</h1>
+                    <h2>hello world 3</h2>
+                    <Footer />
+                </Test>
+            </div>
+        )
+        const domContainer = document.querySelector('#root');
+        const root = ReactDOM.createRoot(domContainer);
+        root.render(body);
+    </script>
+</body>
+
+</html>
