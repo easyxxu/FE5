@@ -20,36 +20,65 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const root = document.getElementById('root');
-
-        async function getProductData() {
+        async function getData() {
             const response = await fetch('http://test.api.weniv.co.kr/mall')
             const product = await response.json()
             return product
         }
-        function App() {
-            return getProductData().then(product => {
-                const mainElement = document.createElement("main")
+        // function Body() {
+        // return getData().then(product => {
+        //     const mainElement = document.createElement("main")
 
-                const h1 = document.createElement('h1')
-                h1.textContent = '상품목록'
-                mainElement.appendChild(h1);
+        //     const h1 = document.createElement('h1')
+        //     h1.textContent = '상품목록'
+        //     mainElement.appendChild(h1);
 
-                const ul = document.createElement('ul')
-                mainElement.appendChild(ul);
+        //     const ul = document.createElement('ul')
+        //     mainElement.appendChild(ul);
 
-                product.forEach(item => {
-                    const productDetail = document.createElement('li')
-                    productDetail.innerHTML = `
-                <h2>${item.productName}</h2>
-                <p>${item.price}</p>
-                `
-                    ul.append(productDetail)
-                })
-                root.append(mainElement)
+        //     product.forEach(item => {
+        //         const productDetail = document.createElement('li')
+        //         productDetail.innerHTML = `
+        //                 <h2>${item.productName}</h2>
+        //                 <p>${item.price}</p>
+        //             `
+        //         ul.append(productDetail)
+        //     })
+        //     root.append(mainElement)
+        // })
+        // }
+        const Detail = (props) => {
+            return (
+                <li>
+                    <h3>{props.item.productName}</h3>
+                    <p>{props.item.price}</p>
+                </li>
+            )
+        }
+        const List = (props) => {
+            return (
+                <ul>
+                    <Detail item={props.item[0]} />
+                    <Detail item={props.item[1]} />
+                    <Detail item={props.item[2]} />
+                    <Detail item={props.item[3]} />
+                    <Detail item={props.item[4]} />
+                    <Detail item={props.item[5]} />
+                    <Detail item={props.item[6]} />
+                </ul>
+            )
+        }
+        const body = () => {
+            getData().then((product) => {
+                return (
+                    <div>
+                    </div>
+                )
             })
         }
-        App();
+        const domContainer = document.getElementById('root');
+        const root = ReactDOM.createRoot(domContainer);
+        root.render(body);
     </script>
 
 </body>
