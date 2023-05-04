@@ -1,0 +1,12 @@
+ul {
+  list-style: none;
+  padding: 0;
+  border: 1px solid black;
+}
+li:not(:last-of-type) {
+  border-bottom: 1px solid black;
+}
+li.visited {
+  background-color: blue;
+  color: aliceblue;
+}
