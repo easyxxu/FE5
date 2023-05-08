@@ -1,0 +1,19 @@
+.btn-feeling {
+  border: 0;
+  border-radius: 10px;
+  width: 250px;
+  padding: 10px;
+  font-size: 20px;
+  color: rgb(233, 248, 234);
+  background: rgb(192, 223, 166);
+  box-shadow: 0 0 10px rgb(199, 199, 199);
+  cursor: pointer;
+  margin: 0;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.btn-feeling:hover {
+  background: rgb(126, 160, 98);
+}
