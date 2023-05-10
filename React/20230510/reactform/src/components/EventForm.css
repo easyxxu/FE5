@@ -1,0 +1,23 @@
+.event-form label,
+.event-form input {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  padding: 20px;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+button {
+  float: right;
+  border: 0;
+  background-color: rgb(197, 170, 212);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  font-size: 24px;
+  margin: 15px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
