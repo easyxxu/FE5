@@ -1,0 +1,16 @@
+.box {
+  margin: 40px;
+  background: blanchedalmond;
+}
+.text {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  color: Red;
+}
+.main h1 {
+  font-size: 40px;
+}
+.contents {
+  color: blue;
+}
