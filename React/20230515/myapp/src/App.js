@@ -15,8 +15,8 @@ function App() {
       {/* <Counter /> */}
       {/* <Time /> */}
       {/* <UseRef /> */}
-      <TryUseRefDiff />
-      {/* <TryUseRefDom /> */}
+      {/* <TryUseRefDiff /> */}
+      <TryUseRefDom />
       {/* <TryUseMemo /> */}
     </div>
   );

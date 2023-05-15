@@ -12,9 +12,18 @@ const TryUseRefDom = () => {
     console.log(emailInput.current, pwInput.current);
     // setEmailValue(document.querySelectorAll("input")[0].value);
     // setPwValue(document.querySelectorAll("input")[1].value);
-    // setEmailValue(emailInput.current.value)
-    // setPwValue(pwInput.current.value)
+    setEmailValue(emailInput.current.value);
+    setPwValue(pwInput.current.value);
   };
+  if (emailInput.current.value === "") {
+    alert("이메일을 입력해주세요");
+    emailInput.current.focus();
+    return;
+  } else if (pwInput.current.value === "") {
+    alert("비밀번호를 입력해주세요");
+    pwInput.current.focus();
+    return;
+  }
 
   return (
     <form style={{ display: "flex", flexDirection: "column" }}>
