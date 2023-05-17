@@ -16,6 +16,8 @@ const Item = styled.div`
 export default function NationList() {
   const [nations, setNations] = useState([]);
   const [url, setUrl] = useState("http://localhost:3000/nations");
+
+  // 만약 state가 변하지 않으면(아래의 버튼을 실행x) useEffect를 사용하지 않아도 통신은 잘 실행됨
   useEffect(() => {
     async function getData() {
       try {
@@ -30,7 +32,7 @@ export default function NationList() {
       }
     }
     getData();
-  }, [url]);
+  }, [url]); // url이 변할 때마다 실행됨
   console.log(nations);
   return (
     <Item>
