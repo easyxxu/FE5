@@ -1,7 +1,9 @@
+import NationList from "./Components/NationList";
+
 function App() {
   return (
     <div>
-      hello world
+      <NationList />
     </div>
   );
 }
