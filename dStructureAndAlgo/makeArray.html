@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        class UltraArray {
+            constructor() {
+                this.data = {};
+                this.length = 0;
+            }
+            push(el) {
+                this.data[this.length] = el;
+                this.length += 1;
+                return this.length;
+            }
+            pop() {
+                const lastState = this.data[this.length - 1];
+                delete this.data[this.length - 1];
+                this.length -= 1;
+                return lastState;
+            }
+
+            // 인덱스 숫자로 속성을 제거
+            deleteWithIndex(idx) {
+                const removedItem = this.data[idx];
+                // delete this.data[idx];
+                this.changeOrderOfItems(idx);
+                return removedItem
+            }
+            // 인덱스를 정리하고 속성을 제거
+            changeOrderOfItems(idx) {
+                delete this.data[idx];
+                for (let i = 0; i < this.length - 1; i++) {
+                    this.data[idx + i] = this.data[idx + i + 1];
+                    delete this.data[idx + i + 1]
+                    this.length -= 1;
+                }
+                return this.data
+            }
+        }
+        const myArray = new UltraArray();
+        // myArray.deleteWithIndex(1)
+        myArray.push(1);
+        myArray.push(2);
+        myArray.push(3);
+        myArray.push(4);
+    </script>
+</body>
+
+</html>
